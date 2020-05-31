@@ -38,7 +38,7 @@ for parameter in range(parameter):
     filt=filt*2
 model.add(Flatten())
 model.add(Dense(units=10, activation='softmax')
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile( optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'] )
 
 #fiting the model
           
