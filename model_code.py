@@ -50,10 +50,14 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 
 #odelfitting
 
-model.fit(X_train, y_train, epochs=1)
+model.fit(X_train, y_train, validation_data=(x_test2, y_test2), epochs=1)
 
 
 #storing accuracy in variable 
+
+scores = model.evaluate(x_test2, y_test2)
+print('Test loss:', scores[0])
+print('Test accuracy:', scores[1])
 
 
 a=model.history.history.get('accuracy')
@@ -74,4 +78,9 @@ acc = open("accurate.txt", "w+")
 acc.write(str(a))
 acc.close()
 
+
+display_accuracy = open('/home/show.html','r+')
+display_accuracy.read()
+display_accuracy.write('\nAccuracy achieved : ' + str(scores[1])+'\n</pre>')
+display_accuracy.close()
 
