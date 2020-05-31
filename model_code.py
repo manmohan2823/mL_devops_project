@@ -79,7 +79,7 @@ acc.write(str(a))
 acc.close()
 
 
-display_accuracy = open('show.html','r+')
+display_accuracy = open('/root/show.html','r+')
 display_accuracy.read()
 display_accuracy.write('\nAccuracy achieved : ' + str(scores[1])+'\n</pre>')
 display_accuracy.close()
