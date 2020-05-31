@@ -43,14 +43,14 @@ model.add(Dense(units=10, activation='softmax')
 
 #compiling the model
 
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accurate'])
 
 #fiting the model
 model.fit(X_train, y_train, epochs=1,verbose=1)
 
 #checking the accuracy
 
-a=model.history.history.get('accuracy')
+a=model.history.history.get('accurate')
 a= a[0] * 100
 a=int(a)
 
@@ -59,9 +59,9 @@ print("Accurcay of the model is:", a)
 
 #storing the accuracy
 
-acc= open('/root/accurate.txt','w+')
-acc.write(str(a))
-acc.close()
+accurate= open('/root/accurate.txt','w+')
+accurate.write(str(a))
+accurate.close()
 
 display_accuracy = open('/home/show.html','r+')
 display_accuracy.read()
