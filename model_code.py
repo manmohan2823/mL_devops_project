@@ -29,8 +29,6 @@ from keras.layers import Dense
 from keras.layers import Convolution2D
 from keras.layers import Flatten
 from keras.optimizers import RMSprop
-
-
 model = Sequential()
 model.add(Convolution2D(filters = 2, kernel_size=(3,3), activation='relu', input_shape=(28,28,1)))
 parameter=1
@@ -42,11 +40,10 @@ model.add(Flatten())
 model.add(Dense(units=10, activation='softmax')
 
 #compiling the model
-
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 #fiting the model
-model.fit(X_train, y_train, epochs=1,verbose=1)
+model.fit(X_train, y_train, epochs=1)
 
 #checking the accuracy
 
@@ -63,10 +60,4 @@ accurate= open('/root/accurate.txt','w+')
 accurate.write(str(a))
 accurate.close()
 
-display_accuracy = open('/home/show.html','r+')
-display_accuracy.read()
 
-# display_accuracy
-display_accuracy.write('\nAccuracy achieved : ' + str(a) +'\n</pre>')
-display_accuracy.close()
-    
