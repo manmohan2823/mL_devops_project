@@ -43,7 +43,7 @@ model.add(Dense(units=10, activation='softmax')
 
 #compiling the model
 
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accurate'])
+model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accurate'])
 
 #fiting the model
 model.fit(X_train, y_train, epochs=1,verbose=1)
