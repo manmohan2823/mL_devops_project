@@ -28,7 +28,7 @@ X_test = X_test.astype('float32')
 #Performing one-hot encoding to convert categorical variables into dummy
 from keras.utils.np_utils import to_categorical
 y_train = to_categorical(y_train)
-
+y_test = to_categorical(y_test)
 
 
 
@@ -50,12 +50,12 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 
 #odelfitting
 
-model.fit(X_train, y_train, validation_data=(x_test2, y_test2), epochs=1)
+model.fit(X_train, y_train, validation_data=(x_test, y_test), epochs=1)
 
 
 #storing accuracy in variable 
 
-scores = model.evaluate(x_test2, y_test2)
+scores = model.evaluate(x_test, y_test)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
