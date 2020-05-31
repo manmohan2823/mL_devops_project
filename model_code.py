@@ -50,12 +50,12 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 
 #odelfitting
 
-model.fit(X_train, y_train, validation_data=(x_test, y_test), epochs=1)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=1)
 
 
 #storing accuracy in variable 
 
-scores = model.evaluate(x_test, y_test)
+scores = model.evaluate(X_test, y_test)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
