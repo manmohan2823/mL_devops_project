@@ -8,8 +8,6 @@ from keras.datasets import mnist
 dataset=mnist.load_data()
 
 
-# In[ ]:
-
 
 #Splitting the dataset into appropriate variables
 train, test = dataset
@@ -17,7 +15,6 @@ X_train, y_train = train
 X_test, y_test = test
 
 
-# In[ ]:
 
 
 #Let us reshape the images
@@ -27,15 +24,12 @@ X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 
 
-# In[ ]:
-
 
 #Performing one-hot encoding to convert categorical variables into dummy
 from keras.utils.np_utils import to_categorical
 y_train = to_categorical(y_train)
 
 
-# In[ ]:
 
 
 from keras.models import Sequential
@@ -54,13 +48,12 @@ model.add(Dense(units=10, activation='softmax'))
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
-# In[ ]:
-
+#odelfitting
 
 model.fit(X_train, y_train, epochs=1)
 
 
-# In[ ]:
+#storing accuracy in variable 
 
 
 a=model.history.history.get('accuracy')
@@ -68,17 +61,17 @@ a= a[0] * 100
 a=int(a)
 
 
-# In[ ]:
+#printing accuracy
 
 
 print("Accurcay of the model is:", a)
 
 
-# In[ ]:
+#file handling
 
 
-f = open("accuracy.txt", "w+")
-f.write(str(a))
-f.close()
+acc = open("accurate.txt", "w+")
+acc.write(str(a))
+acc.close()
 
 
