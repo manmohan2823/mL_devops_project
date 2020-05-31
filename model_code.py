@@ -43,14 +43,14 @@ model.add(Dense(units=10, activation='softmax')
 
 #compiling the model
 
-model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accurate'])
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 #fiting the model
 model.fit(X_train, y_train, epochs=1,verbose=1)
 
 #checking the accuracy
 
-a=model.history.history.get('accurate')
+a=model.history.history.get('accuracy')
 a= a[0] * 100
 a=int(a)
 
