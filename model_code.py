@@ -59,7 +59,7 @@ print("Accurcay of the model is:", a)
 
 #storing the accuracy
 
-acc= open('/root/accuracy.txt','w+')
+acc= open('/root/accurate.txt','w+')
 acc.write(str(a))
 acc.close()
 
